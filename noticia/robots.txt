@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /RELATORIO-REFORMULACAO.md
+
+Sitemap: https://www.aproveite-atendimento.site/noticia/sitemap.xml

